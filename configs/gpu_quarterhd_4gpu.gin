@@ -20,7 +20,7 @@
 # Note that this configuration has not been tested and may require further
 # tuning.
 
-include 'warp_defaults.gin'
+include 'configs/warp_defaults.gin'
 
 max_steps = 500000
 lr_decay_steps = 1000000
