@@ -1,0 +1,4 @@
+# export XLA_FLAGS=--xla_gpu_force_compilation_parallelism=1 && bsub -n 16 -W 120:00 -J "curls" -R "rusage[mem=2048, ngpus_excl_p=8]" -o logs/output_quarterhd.txt 'python train.py --gin_configs configs/gpu_quarterhd.gin'
+# export XLA_FLAGS=--xla_gpu_force_compilation_parallelism=1 && bsub -n 16 -W 4:00 -J "curls" -R "rusage[mem=2048, ngpus_excl_p=8]" -R "select[gpu_mtotal0>=10240]" -o output_paper_8gpu_half_bs.txt 'python train.py --gin_configs configs/gpu_vrig_paper.gin'
+# export XLA_FLAGS=--xla_gpu_force_compilation_parallelism=1 && bsub -n 16 -W 120:00 -J "curls" -R "rusage[mem=2048, ngpus_excl_p=8]" -o logs/output_fullhd.txt 'python train.py --gin_configs configs/gpu_fullhd.gin'
+export XLA_FLAGS=--xla_gpu_force_compilation_parallelism=1 && bsub -n 16 -W 120:00 -J "paper" -R "rusage[mem=2048, ngpus_excl_p=8]" -o logs/output_paper.txt 'python train.py --gin_configs configs/test_vrig_paper.gin'
